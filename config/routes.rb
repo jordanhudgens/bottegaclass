@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :blogs
+  get 'page/home'
+
+  get 'page/about'
+
+  get 'page/contact'
+
   root 'homepage#index'
   get 'homepage/index'
 
