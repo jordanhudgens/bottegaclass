@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :portfoilios
   resources :blogs
   get 'page/home'
 
