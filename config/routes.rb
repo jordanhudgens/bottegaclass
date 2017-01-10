@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   resources :portfolios
   resources :blogs
-  get 'page/home'
-
-  get 'page/about'
-
+  get 'about-me', to: 'page#about'
+  get 'contact', to: 'page#contact'
   get 'page/contact'
 
+  
+  root 'page#home'
 
   
 
