@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :portfolios
+  resources :portfolios, except: [:show]
   resources :blogs
   get 'about-me', to: 'page#about'
   get 'contact', to: 'page#contact'
