@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170111203429) do
+ActiveRecord::Schema.define(version: 20170113225213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20170111203429) do
     t.datetime "updated_at",             null: false
     t.string   "slug"
     t.integer  "status",     default: 0
+    t.string   "topic"
+    t.string   "references"
     t.index ["slug"], name: "index_blogs_on_slug", unique: true, using: :btree
   end
 
@@ -52,6 +54,12 @@ ActiveRecord::Schema.define(version: 20170111203429) do
     t.integer  "percent_utilized"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
