@@ -7,18 +7,16 @@ class PortfoliosController < ApplicationController
     @angular_portfolio_items = Portfolio.angular
   end
 
-    
-  
-
   def new
     @portfolio_item = Portfolio.new
+    3.times { @portfolio_item.technologies.build }
   end
 
   def create
-    @portfolio_item = Portfolio.new(portfolio_params)
+    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attibutes: [:name]))
     
     if @portfolio_item.save
-      redirect_to @portfolio_item
+      redirect_to portfolios_show_path(@portfolio_item)
     else
       render :new
     end
@@ -55,8 +53,3 @@ class PortfoliosController < ApplicationController
    end
  
  end
-
-
-
-
-
