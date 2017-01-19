@@ -13,10 +13,10 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attibutes: [:name]))
+    @portfolio_item = Portfolio.new(portfolio_params)
     
     if @portfolio_item.save
-      redirect_to portfolios_show_path(@portfolio_item)
+      redirect_to portfolios_path, notice: "Portfolio items was successfully created"
     else
       render :new
     end
@@ -48,8 +48,16 @@ class PortfoliosController < ApplicationController
    private
 
    def portfolio_params
-   params.require(:portfolio).permit(:title, :subtitle, :body, :main_image, :thumb_image)
+   params.require(:portfolio).permit(:title, 
+                                    :subtitle, 
+                                    :body,
+                                    :image,
+                                    technologies_attributes: [:name]
+                                    )
 
+    
    end
+
+
  
  end

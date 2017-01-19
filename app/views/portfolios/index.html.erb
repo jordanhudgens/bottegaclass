@@ -1,6 +1,5 @@
 <h1>Portfolio Index</h1>
-
-
+<%= link_to "create new", new_portfolio_path %>
 
 <% @portfolio_items.each do |portfolio_item| %>
   <p><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></p>
