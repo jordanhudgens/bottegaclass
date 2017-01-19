@@ -1,0 +1,14 @@
+module SetSource
+  extend ActiveSupport::Concern
+
+
+  inculde do 
+    before_filter :set_source
+  end
+end
+
+
+
+    def set_source
+      session[:source] = params[:q] if params[:q]
+    end
