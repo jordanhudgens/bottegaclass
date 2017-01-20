@@ -1,3 +1,4 @@
+<h1>Create a new Portfolio It</h1>
 <%= form_for @portfolio_item do |f| %>
  <div class="field">
    <%= f.label :title %>
@@ -24,6 +25,7 @@
    <%= f.text_area :thumb_image %>
  </div>
 
+
  <ul>
     <%= f.fields_for :technologies do |tech_form| %>
     <li>
@@ -33,10 +35,9 @@
     <% end %>
   </ul>
 
-
-
-
-<div class="actions">
+    <div class="actions">
    <%= f.submit %>
  </div>
+
+
 <% end %>
