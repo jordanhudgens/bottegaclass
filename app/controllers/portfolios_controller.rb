@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-  layout 'portfolio'
+  layout "portfolio"
   def index
 
     @portfolio_items = Portfolio.all
@@ -39,9 +39,10 @@ class PortfoliosController < ApplicationController
     if @portfolio_item.update(portfolio_params)
       redirect_to @portfolio_item
     else
-    render :edit
+      render :edit
+    end
   end
-  end
+
   def destroy
     @portfolio_item =Portfolio.find(params[:id])
     @portfolio_item.destroy
@@ -60,7 +61,4 @@ class PortfoliosController < ApplicationController
 
     
    end
-
-
- 
  end
