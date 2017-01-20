@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     
     root to: 'page#home'    
     
-    get 'about_me', to: 'pages#about'
-    get 'contact', to: 'pages#contact' 
+    get 'about_me', to: 'page#about'
+    get 'contact', to: 'page#contact' 
     
 
     resources :blogs do
