@@ -15,4 +15,9 @@ module ApplicationHelper
     content_tag(:p, greeting, class: "source-greeting")
     end
   end
+
+
+  def copyright_generator
+  TravisViewTool::Renderer.set_copyright 'Austyn', 'All rights resevered'
+  end
 end
